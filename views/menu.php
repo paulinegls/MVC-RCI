@@ -12,11 +12,11 @@
       }
 
       foreach ($list as $dbname) {
-        if ($isactive) {
-          echo '<li class="active"><a href="'.$dbname.'">'.$dbname.'</a></li>';
+        if ($isactive == $dbname["Database"]) {
+          echo '<li class="active"><a href="index.php?db='.$dbname["Database"].'">'.$dbname["Database"].'</a></li>';
         }
         else {
-          echo '<li><a href="'.$dbname.'">'.$dbname.'</a></li>';
+          echo '<li><a href="index.php?db='.$dbname["Database"].'">'.$dbname["Database"].'</a></li>';
         }
       }
       ?>
