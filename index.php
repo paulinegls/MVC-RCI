@@ -13,7 +13,7 @@
 <body>
 
 <?php
-include 'views/menu.php';
+include 'controllers/main.controller.php';
 include 'views/table.php';
 ?>
 
