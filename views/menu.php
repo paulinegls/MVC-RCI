@@ -12,7 +12,7 @@
       }
 
       foreach ($list as $dbname) {
-        if ($isactive) {
+        if ($isactive == $dbname) {
           echo '<li class="active"><a href="'.$dbname.'">'.$dbname.'</a></li>';
         }
         else {
