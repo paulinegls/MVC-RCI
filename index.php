@@ -13,11 +13,17 @@
 <body>
 
 <?php
+<<<<<<< HEAD
 $list = array('lol', 'mdr');
 include 'views/menu.php';
 
 //include_once 'controllers/main.controller.php';
 include 'views/default.php';
+=======
+include 'controllers/main.controller.php';
+include 'views/table.php';
+//include 'views/default.php';
+>>>>>>> origin/master
 //include 'views/table.php';
 ?>
 
