@@ -16,7 +16,6 @@
 include 'controllers/main.controller.php';
 include 'views/table.php';
 //include 'views/default.php';
-//include 'views/table.php';
 ?>
 
   </div>
