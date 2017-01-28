@@ -13,8 +13,12 @@
 <body>
 
 <?php
+$list = array('lol', 'mdr');
 include 'views/menu.php';
-include 'views/table.php';
+
+//include_once 'controllers/main.controller.php';
+include 'views/default.php';
+//include 'views/table.php';
 ?>
 
   </div>
