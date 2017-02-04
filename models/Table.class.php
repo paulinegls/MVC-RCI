@@ -1,5 +1,7 @@
 <?php
 
+include_once 'config.php';
+
 class Table{
   private $name;
   private $attributes;
@@ -8,7 +10,7 @@ class Table{
   private function __construct(){} 
 
   public static function getTablesList($dbname){
-    $pdo = new PDO("mysql:host=localhost;charset=utf8;", "root", "");
+    $pdo = new PDO("mysql:host=localhost;charset=utf8;", $GLOBALS['config']['username'], $GLOBALS['config']['pwd']);
     $stmt = $pdo->prepare("show tables from ".$dbname);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -16,9 +18,18 @@ class Table{
     return $res;
   }
 
-  public static function getAttributesList($dbname, $tableName){
-    $pdo = new PDO("mysql:host=localhost;charset=utf8;", "root", "");
+  public static function getFieldsList($dbname, $tableName){
+    $pdo = new PDO("mysql:host=localhost;charset=utf8;", $GLOBALS['config']['username'], $GLOBALS['config']['pwd']);
     $stmt = $pdo->prepare("show columns from ".$dbname.".".$tableName);
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $res = $stmt->fetchAll();
+    return $res;
+  }
+
+  public static function selectFromTable($dbname, $tableName){
+    $pdo = new PDO("mysql:host=localhost;charset=utf8;dbname=".$dbname, $GLOBALS['config']['username'], $GLOBALS['config']['pwd']);
+    $stmt = $pdo->prepare("SELECT * FROM ".$tableName);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $res = $stmt->fetchAll();
