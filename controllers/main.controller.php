@@ -15,8 +15,14 @@
   $list = Database::getDatabasesList(); 
   include('views/menu.php'); 
  
-	if(isset($db) AND $tables = Table::getTablesList($db)){
-		$db_view = include_once 'views/database.php' ; 
+	if(isset($db) && $tables = Table::getTablesList($db)){
+    if(isset($_GET['table']) && $fields = Table::getFieldsList($db, $_GET['table'])){
+      $table_name = $_GET['table'];
+      $rows = Table::selectFromTable($db, $table_name);
+      include_once 'views/table.php';
+    }else{
+		  include_once 'views/database.php';
+    }
 	}
 	  
 ?>

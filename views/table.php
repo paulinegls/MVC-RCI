@@ -1,19 +1,33 @@
 <div class="col-sm-10">
-	<h1>Titre</h1>
+	<h1><?php echo $table_name ?></h1>
 	<table class="table table-hover">
     <thead>
       <tr>
-        <th>Column 1</th>
-        <th>Column 2</th>
-        <th>Column 3</th>
+<?php
+  $html = '';
+
+  foreach($fields as $field){
+    $html.= "<th>".$field['Field']." (".$field['Type'].")</th>";
+  }
+
+  echo $html;
+?>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>TEST</td>
-        <td>TEST</td>
-        <td>TEST</td>
-      </tr>
+<?php
+
+$html = '';
+foreach($rows as $row){
+  $html.= "<tr>";
+  foreach($row as $column){
+    $html.= "<td>" .$column. "</td>";
+  }
+  $html.= "</tr>";
+}
+
+echo $html;
+?>
     </tbody>
   </table>
 </div>

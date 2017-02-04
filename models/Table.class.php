@@ -16,9 +16,18 @@ class Table{
     return $res;
   }
 
-  public static function getAttributesList($dbname, $tableName){
+  public static function getFieldsList($dbname, $tableName){
     $pdo = new PDO("mysql:host=localhost;charset=utf8;", "root", "");
     $stmt = $pdo->prepare("show columns from ".$dbname.".".$tableName);
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $res = $stmt->fetchAll();
+    return $res;
+  }
+
+  public static function selectFromTable($dbname, $tableName){
+    $pdo = new PDO("mysql:host=localhost;charset=utf8;dbname=".$dbname, 'root', '');
+    $stmt = $pdo->prepare("SELECT * FROM ".$tableName);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $res = $stmt->fetchAll();
