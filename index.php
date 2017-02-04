@@ -14,11 +14,11 @@
 
 <?php
 include 'controllers/main.controller.php';
-include 'views/table.php';
+//include 'views/table.php';
 //include 'views/default.php';
 ?>
 
-  </div>
+</div>
 </div>
 </body>
 </html>
