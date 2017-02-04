@@ -1,6 +1,7 @@
-  <?php  
+  <?php
+  include_once 'config.php';
 
-	$pdo = new PDO('mysql:host=localhost;charset=utf8;', 'root', ''); 
+	$pdo = new PDO('mysql:host=localhost;charset=utf8;', $GLOBALS['config']['username'], $GLOBALS['config']['pwd']); 
 
   require_once('models/Database.class.php'); 
   require_once('models/Table.class.php'); 
