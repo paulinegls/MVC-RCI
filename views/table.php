@@ -1,4 +1,4 @@
-<div class="col-sm-10 col-sm-offset-2 main">
+<div class="col-sm-10 main">
 	<h1><?php echo $table_name ?></h1>
 	<table class="table table-hover">
     <thead>
