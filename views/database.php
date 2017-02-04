@@ -1,5 +1,5 @@
 <div class="col-sm-10">
-  <h1>Titre</h1>
+  <h1><?php echo $db ?></h1>
   <nav>
     <ul>
 <?php
