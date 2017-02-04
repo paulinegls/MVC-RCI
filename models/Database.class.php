@@ -1,5 +1,7 @@
 <?php
 
+include_once 'config.php';
+
 class Database{
 
   private $name;
@@ -11,7 +13,7 @@ class Database{
   } 
 
   public static function getDatabasesList(){
-    $pdo = new PDO("mysql:host=localhost;charset=utf8;", "root", "");
+    $pdo = new PDO("mysql:host=localhost;charset=utf8;", $GLOBALS['config']['username'], $GLOBALS['config']['pwd']);
     $stmt = $pdo->prepare("SHOW DATABASES");
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute();
