@@ -11,3 +11,17 @@
 @media screen and (max-width: 767px) {
   .row.content {height: auto;} 
 }
+
+.sidenav{
+	position: fixed;
+}
+.nav{
+	overflow-x: hidden;
+	height: 500px;
+}
+
+.main{
+	min-height: 80vh;
+	border-bottom: 1px solid #337ab7;
+	margin-bottom: 20px;
+}
