@@ -1,4 +1,4 @@
-<div class="col-sm-10">
+<div class="col-sm-10 main">
 	<h1>Titre</h1>
 	<table class="table table-hover">
     <thead>
